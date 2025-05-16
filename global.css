@@ -33,8 +33,50 @@ body {
   }
 }
 circle{
-    fill: steelblue;
-    fill-opacity: 60%;
-    stroke: white;
-    pointer-events: auto;
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+  fill: var(--color);
+  fill-opacity: 60%;
+  stroke: white;
+  pointer-events: auto;
+}
+.legend{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+  div{
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(
+      in oklch,
+      var(--color-departures) calc(100% * var(--departure-ratio)),
+      var(--color-arrivals)
+    );
+    background-color : var(--color);
+  }
+  
+}
+
+header{
+  display: flex;
+  gap: 1em;
+  align-items: baseline;
+  margin-left: auto;
+  display: block;
+  
+  em{
+    display: block;
+  }
+  
+  time{
+    display: block;
+  }
+
+
 }
