@@ -49,8 +49,10 @@ circle{
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1em;
+  gap: 0.5em;
+  padding: 10px;
   div{
+    font: 100%/1.5 system-ui, sans-serif;
     --color-departures: steelblue;
     --color-arrivals: darkorange;
     --color: color-mix(
@@ -59,6 +61,18 @@ circle{
       var(--color-arrivals)
     );
     background-color : var(--color);
+    color: white;
+    padding: 5px;
+  }
+  .left{
+    text-align: left;
+  }
+  .mid{
+    text-align: center;
+  }
+
+  .right{
+    text-align: right;
   }
   
 }
